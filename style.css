@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #grid-container {
@@ -29,34 +29,75 @@ button {
     cursor: pointer;
 }
 
-h1{
-    color:  yellowgreen;
+h1 {
+    color: yellowgreen;
+    text-align: center;
 }
 
-label{
+label {
     padding: 8px;
 }
 
-input{
+input {
     padding: 4px;
     border-radius: 4px;
     border-style: dashed;
 }
 
-#player1Name{
+#player1Name {
     color: red;
 }
 
-#player2Name{
+#player2Name {
     color: Green;
 }
 
-#winner{
-    color:coral ;
+#winner {
+    color: coral;
 }
 
-#save{
+#save {
     padding: 8px 16px;
     border-radius: 4px;
-    background-color:  ghostwhite;
+    background-color: ghostwhite;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .profileContainer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.grid-item.winning {
+    animation: winningAnimation 1s infinite alternate;
+}
+
+@keyframes winningAnimation {
+    from {
+        background-color: green;
+    }
+
+    to {
+        background-color: #f00;
+    }
+}
+
+#winner {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#play-again {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border-color: aqua;
+    background-color: antiquewhite;
+    display: none;
 }
